@@ -1,0 +1,120 @@
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #5a0035;
+    position: relative; /* Needed for confetti positioning */
+    overflow-x: hidden; /* Prevent horizontal scroll from confetti */
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.wheel-container {
+    margin: 20px auto;
+}
+
+#wheel {
+    font-size: 5rem;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border-radius: 50%;
+    background: #ffcce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    transition: transform 2s ease-out;
+}
+
+#result {
+    font-size: 1.3em;
+    margin-top: 15px;
+    min-height: 2em; /* Keeps layout from jumping */
+}
+
+#spinAgain {
+    display: none;
+    background: #ff2f92;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+    #spinAgain:hover {
+        background: #d1006f;
+    }
+
+/* Confetti animation */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fall 1s linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(300px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(720deg);
+    }
+}
+
+button, a {
+    background: #ff2f92;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 10px;
+}
+
+    button:hover, a:hover {
+        background: #d1006f;
+    }
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background: #fff;
+    color: #ff2f92;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+    .back-btn:hover {
+        background: #ff2f92;
+        color: white;
+    }
